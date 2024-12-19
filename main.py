@@ -1,3 +1,4 @@
+from pprint import pprint
 cook_book = {}
 with open('recepty.txt', encoding='utf-8') as file:
     for line in file.read().split('\n\n'):
@@ -7,7 +8,7 @@ with open('recepty.txt', encoding='utf-8') as file:
             ingredient_name, quantity,  measure  = arg.split(' | ')
             cook_li.append({'ingredient_name': ingredient_name, 'quantity': int(quantity),'measure': measure})
             cook_book[name] = cook_li
-# print(cook_book)
+#pprint(cook_book)
 
 
 def get_shop_list_by_dishes(dishes, person_count ):
@@ -24,7 +25,7 @@ def get_shop_list_by_dishes(dishes, person_count ):
     return result
 
 
-print(get_shop_list_by_dishes(['Запеченный картофель', 'Омлет'], 2 ))
+pprint(get_shop_list_by_dishes(['Запеченный картофель', 'Омлет'], 2 ))
 
 
 
