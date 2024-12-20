@@ -1,6 +1,7 @@
 from pprint import pprint
-cook_book = {}
+
 with open('recepty.txt', encoding='utf-8') as file:
+    cook_book = {}
     for line in file.read().split('\n\n'):
         name, _, *args = line.split('\n')
         cook_li = []
@@ -8,7 +9,7 @@ with open('recepty.txt', encoding='utf-8') as file:
             ingredient_name, quantity,  measure  = arg.split(' | ')
             cook_li.append({'ingredient_name': ingredient_name, 'quantity': int(quantity),'measure': measure})
             cook_book[name] = cook_li
-#pprint(cook_book)
+    #pprint(cook_book)
 
 
 def get_shop_list_by_dishes(dishes, person_count ):
